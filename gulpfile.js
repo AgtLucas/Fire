@@ -2,7 +2,8 @@ var gulp = require('gulp')
   , browserify = require('gulp-browserify')
   , uglify = require('gulp-uglify')
   , concat = require('gulp-concat')
-  , sass = require('gulp-sass');
+  , sass = require('gulp-sass')
+  , gh = require('gulp-gh-pages');
 
 // Browserify Task
 gulp.task('browserify', function () {
@@ -25,4 +26,10 @@ gulp.task('default', ['browserify', 'copy']);
 // Watch Task
 gulp.task('watch', function () {
   gulp.watch('src/**/*.*', ['default']);
+});
+
+// Deploy Task
+gulp.task('gh', function () {
+  return gulp.src('dist/**/*')
+    .pipe(deploy(options))
 });
