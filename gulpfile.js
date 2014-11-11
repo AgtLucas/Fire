@@ -20,7 +20,10 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist'));
 });
 
-// Watch task
+// Default Task
+gulp.task('default', ['browserify', 'copy']);
+
+// Watch Task
 gulp.task('watch', function () {
   gulp.watch('src/**/*.*', ['default']);
 });
