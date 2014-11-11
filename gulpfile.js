@@ -31,5 +31,5 @@ gulp.task('watch', function () {
 // Deploy Task
 gulp.task('gh', function () {
   return gulp.src('dist/**/*')
-    .pipe(deploy(options))
+    .pipe(gh())
 });
