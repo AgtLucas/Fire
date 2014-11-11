@@ -19,3 +19,8 @@ gulp.task('copy', function () {
     .pipe(copy())
     .pipe(gulp.dest('dist'));
 });
+
+// Watch task
+gulp.task('watch', function () {
+  gulp.watch('src/**/*.*', ['default']);
+});
