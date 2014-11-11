@@ -26,5 +26,19 @@ var TodoApp = React.createClass({
       });
       this.setState({text: ""});
     }
+  },
+
+  render: function () {
+    return (
+      <div className="todo-app__container">
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.onChange} value={this.state.text} />
+          <button>{"Add #" + (this.states.items.length) + 1}</button>
+        </form>
+      </div>
+    );
   }
-})
+});
+
+module.exports = TodoApp;
