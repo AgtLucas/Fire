@@ -2,7 +2,6 @@ var gulp = require('gulp')
   , browserify = require('gulp-browserify')
   , uglify = require('gulp-uglify')
   , concat = require('gulp-concat')
-  , copy = require('gulp-copy')
   , sass = require('gulp-sass');
 
 // Browserify Task
@@ -17,7 +16,6 @@ gulp.task('browserify', function () {
 // Copy Task
 gulp.task('copy', function () {
   gulp.src('src/index.html')
-    .pipe(copy())
     .pipe(gulp.dest('dist'));
 });
 
