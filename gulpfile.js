@@ -12,3 +12,10 @@ gulp.task('browserify', function () {
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
+
+// Copy Task
+gulp.task('copy', function () {
+  gulp.src('src/index.html')
+    .pipe(copy())
+    .pipe(gulp.dest('dist'));
+});
