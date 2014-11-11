@@ -28,6 +28,7 @@
     "reactify": "^0.15.2"
   },
   "dependencies": {
+    "firebase": "^2.0.2",
     "reactfire": "^0.4.0"
   }
 }
