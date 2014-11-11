@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactFireMixin = require('reactfire');
 var TodoList = require('./todolist');
+// var Firebase = require('firebase');
 
 var TodoApp = React.createClass({
   mixins: [ReactFireMixin],
