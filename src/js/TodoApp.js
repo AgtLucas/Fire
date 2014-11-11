@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactFireMixin = require('reactfire');
 var TodoList = require('./todolist');
-// var Firebase = require('firebase');
+var Firebase = require('firebase');
 
 var TodoApp = React.createClass({
   mixins: [ReactFireMixin],
@@ -12,7 +12,7 @@ var TodoApp = React.createClass({
 
   componentWillMount: function () {
     var firebaseRef = new Firebase('https://ReactFireTodoApp.firebaseio.com/items/');
-    this.bindAsArray(firebaseRef.limitToLast(25), 'items');
+    this.bindAsArray(firebaseRef.limitToLast(25), "items");
   },
 
   onChange: function (e) {
@@ -21,8 +21,8 @@ var TodoApp = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
-    if (this.state.text && this.state.text.trim() !== 0) {
-      this.firebaseRef['items'].push({
+    if (this.state.text && this.state.text.trim().length !== 0) {
+      this.firebaseRefs["items"].push({
         text: this.state.text
       });
       this.setState({text: ""});
@@ -35,7 +35,7 @@ var TodoApp = React.createClass({
         <TodoList items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.onChange} value={this.state.text} />
-          <button>{"Add #" + (this.states.items.length) + 1}</button>
+          <button>{"Add #" + (this.state.items.length) + 1}</button>
         </form>
       </div>
     );
