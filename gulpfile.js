@@ -2,6 +2,7 @@ var gulp = require('gulp')
   , browserify = require('gulp-browserify')
   , uglify = require('gulp-uglify')
   , concat = require('gulp-concat')
+  , copy = require('gulp-copy')
   , sass = require('gulp-sass');
 
 // Browserify Task
